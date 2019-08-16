@@ -5,6 +5,7 @@
 	<meta charset="utf-8"/>
 	<title>Web-программирование, лабораторная #1</title>
 	<link rel="shortcut icon" href="img/favicon.ico">
+	<script src="js/validation.js"></script>
 	
 	<style>	
 		body{
@@ -180,48 +181,50 @@
 		</div>
 		<div class="workspace-item-container">
 			<h1>Параметры</h1>
-			<div>
-				<div class="horisontal-centering-container parameter-container">
-					<div class="row-conteiner">
-						<label class="parameter-label">X: </label>
-						<input type="text" name="X" placeholder="(-3 ... 5)"/>
+			<form id="computation-form" onsubmit="return validate(this);">
+				<div>
+					<div class="horisontal-centering-container parameter-container">
+						<div class="row-conteiner">
+							<label class="parameter-label">X: </label>
+							<input type="text" name="X" placeholder="(-3 ... 5)"/>
+						</div>
+						<div class="row-conteiner">
+							<label class="parameter-label">Y: </label>
+							<input type="text" name="Y" placeholder="(-5 ... 3)"/>
+						</div>
 					</div>
-					<div class="row-conteiner">
-						<label class="parameter-label">Y: </label>
-						<input type="text" name="Y" placeholder="(-5 ... 3)"/>
+					<div class="horisontal-centering-container parameter-container">
+						<div class="parameter-header">
+							<label class="parameter-label">Значения R</label>
+						</div>
+						<div>
+							<div class="row-conteiner">
+								<label class="radio-button-label">1</label>
+								<input type="radio" name="R" value="1"/>
+							</div>
+							<div class="row-conteiner">
+								<label class="radio-button-label">2</label>
+								<input type="radio" name="R" value="2"/>
+							</div>
+							<div class="row-conteiner">
+								<label class="radio-button-label">3</label>
+								<input type="radio" name="R" value="3"/>
+							</div>
+							<div class="row-conteiner">
+								<label class="radio-button-label">4</label>
+								<input type="radio" name="R" value="4"/>
+							</div>
+							<div class="row-conteiner">
+								<label class="radio-button-label">5</label>
+								<input type="radio" name="R" value="5"/>
+							</div>
+						</div>
+					</div>
+					<div class="horisontal-centering-container">
+						<button class="submit-button" type="submit">Отправить</button>
 					</div>
 				</div>
-				<div class="horisontal-centering-container parameter-container">
-					<div class="parameter-header">
-						<label class="parameter-label">Значения R</label>
-					</div>
-					<div>
-						<div class="row-conteiner">
-							<label class="radio-button-label">1</label>
-							<input type="radio" name="R" value="1"/>
-						</div>
-						<div class="row-conteiner">
-							<label class="radio-button-label">2</label>
-							<input type="radio" name="R" value="2"/>
-						</div>
-						<div class="row-conteiner">
-							<label class="radio-button-label">3</label>
-							<input type="radio" name="R" value="3"/>
-						</div>
-						<div class="row-conteiner">
-							<label class="radio-button-label">4</label>
-							<input type="radio" name="R" value="4"/>
-						</div>
-						<div class="row-conteiner">
-							<label class="radio-button-label">5</label>
-							<input type="radio" name="R" value="5"/>
-						</div>
-					</div>
-				</div>
-				<div class="horisontal-centering-container">
-					<button class="submit-button">Отправить</button>
-				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 	<div id="result-container">
