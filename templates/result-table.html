@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<style>		
+		.result-table{
+			display: table;
+			border-collapse: collapse;
+			font-family: monospace;
+			color: white;
+			font-size: 18px;
+	
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 20px;
+		}
+		
+		.result-tr{
+			display: table-row;
+		}
+		
+		.result-td{
+			display: table-cell;
+			text-align: left;
+			border: none;
+			border: 2px solid black;
+			vertical-align: middle;
+			padding: 5px 10px 5px 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="result-table">
+		<div class="result-tr">
+			<div class="result-td">X: </div>
+			<div class="result-td"><?=$X?></div>
+		</div>
+		<div class="result-tr">
+			<div class="result-td">Y: </div>
+			<div class="result-td"><?=$Y?></div>
+		</div>
+		<div class="result-tr">
+			<div class="result-td">R: </div>
+			<div class="result-td"><?=$R?></div>
+		</div>
+		<div class="result-tr">
+			<div class="result-td">Попадание: </div>
+			<div class="result-td"><?=$hit?></div>
+		</div>
+		<div class="result-tr">
+			<div class="result-td">Дата и время получения запроса: </div>
+			<div class="result-td"><?=$currentTime?></div>
+		</div>
+		<div class="result-tr">
+			<div class="result-td">Время работы скрипта: </div>
+			<div class="result-td"><?=$workTime?></div>
+		</div>
+	</div>
+</body>
+</html>
