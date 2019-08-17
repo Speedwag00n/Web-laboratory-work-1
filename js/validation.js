@@ -25,22 +25,31 @@ function validate(form) {
 function validateParam(param, paramName) {
 
 	if (param == "") {
-		alert("Параметр " + paramName + " должен быть указан");
+		showWarning("Параметр " + paramName + " должен быть указан");
 		return false;
 	}
-	if (!Number.isInteger( parseInt(param, 10) )) {
-		alert(paramName + " должен быть целым числом");
+		console.log();
+	if (!(!isNaN(Number(param)) && Number.isInteger( parseInt(param, 10) ))) {
+		showWarning(paramName + " должен быть числом");
 		return false;
 	}
 	var bottomBorder = borders[paramName][0];
 	var topBorder = borders[paramName][1];
 
-	if (!(parseInt(param, 10) >= bottomBorder && parseInt(param, 10) <= topBorder)) {
-		alert("Значение " + paramName + " не входит в необходимый диапазон (" + bottomBorder + " ... " + topBorder +")");
+	if (!(parseInt(param, 10) > bottomBorder && parseInt(param, 10) < topBorder)) {
+		showWarning("Значение " + paramName + " не входит в необходимый диапазон (" + bottomBorder + " ... " + topBorder +")");
 		return false;
-	} else {
-		console.log("Temp");
 	}
 	
 	return true;
+}
+
+function showWarning(warningMessage) {
+	
+	var warningContainer = document.getElementById("warning-container");
+	
+	if (warningContainer != null) {
+		warningContainer.textContent = warningMessage;
+	}
+	
 }

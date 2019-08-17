@@ -36,7 +36,7 @@
 		body > div{
 			width: 65%;
 			max-width: 1200px;
-			min-width: 900px;
+			min-width: 950px;
 			
 			margin-left: auto;
 			margin-right: auto;
@@ -63,14 +63,17 @@
 			margin: 0px 8px 0px 8px;
 		}
 		
-		.parameter-container{
+		.parameter-container, .button-container{
 			margin-bottom: 20px;
-			border: 2px solid black;
 			padding: 8px;
 			
 			-moz-border-radius: 5px;
 			-webkit-border-radius: 5px;
 			-khtml-border-radius: 5px;
+		}
+		
+		.parameter-container{
+			border: 2px solid black;
 		}
 		
 		.submit-button{
@@ -91,6 +94,8 @@
 		div span{
 			margin-top: auto;
 			margin-bottom: auto;
+			font-family: monospace;
+			color: white;
 		}
 	
 		.left-element{
@@ -130,13 +135,23 @@
 		#task-image{
 			background: url(img/areas.png) no-repeat;
 			background-size: 100% 100%;
-			width: 200px;
-			height: 200px;
+			width: 250px;
+			height: 250px;
 		}
 		
 		input[type="text"]:focus{
 			background-color: #A0A0A0;
 			transition: 0.2s;
+		}
+		
+		#warning-container{
+			display: block;
+			font-size: 16px;
+		}
+		
+		.active-text{
+			transition: 0.5s linear;
+			color: #CE0812;
 		}
 	</style>
 </head>
@@ -195,8 +210,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="horisontal-centering-container">
+					<div class="horisontal-centering-container button-container">
 						<button class="submit-button" type="submit">Отправить</button>
+					</div>
+					<div class="horisontal-centering-container">
+						<span id="warning-container" class="center-element"/>
 					</div>
 				</div>
 			</form>

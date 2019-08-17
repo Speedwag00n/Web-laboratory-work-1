@@ -17,17 +17,17 @@
 
 	$isValid = true;
 	
-	if (!(is_numeric($X) && $X >= -3 && $X <= 5)){
+	if (!(is_numeric($X) && $X > -3 && $X < 5)){
 		$X = $X . "(Not valid)";
 		$isValid = false;
 	}
 	
-	if (!(is_numeric($Y) && $Y >= -5 && $Y <= 3)){
+	if (!(is_numeric($Y) && $Y > -5 && $Y < 3)){
 		$Y = $Y . "(Not valid)";
 		$isValid = false;
 	}
 	
-	if (!(is_numeric($R) && $R >= 1 && $R <= 5)){
+	if (!(is_numeric($R) && $R > 1 && $R < 5)){
 		$R = $R . "(Not valid)";
 		$isValid = false;
 	}
