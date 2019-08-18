@@ -5,7 +5,6 @@
 	<meta charset="utf-8"/>
 	<title>Web-программирование, лабораторная #1</title>
 	<link rel="shortcut icon" href="img/favicon.ico">
-	<script src="js/validation.js"></script>
 	
 	<style>	
 		body{
@@ -132,9 +131,7 @@
 			color: white;
 		}
 		
-		#task-image{
-			background: url(img/areas.png) no-repeat;
-			background-size: 100% 100%;
+		#task-chart{
 			width: 250px;
 			height: 250px;
 		}
@@ -166,7 +163,7 @@
 		<div class="workspace-item-container">
 			<h1>Область</h1>
 			<div class="horisontal-centering-container">
-				<img id="task-image">
+				<canvas id="task-chart"/>
 			</div>
 		</div>
 		<div class="workspace-item-container">
@@ -226,6 +223,9 @@
 			include 'check.php';
 		?>
 	</div>
+	
+	<script src="js/validation.js"></script>
+	<script src="js/create-chart.js"></script>
 </body>
 
 </html>

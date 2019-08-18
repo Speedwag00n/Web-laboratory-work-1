@@ -1,12 +1,12 @@
-let borders = [];
+const borders = [];
 borders["X"] = ["-3", "5"];
 borders["Y"] = ["-5", "3"];
 
 function validate(form) {
 	
-	var X = form.X.value;
-	var Y = form.Y.value;
-	var R = form.R.value;
+	let X = form.X.value;
+	let Y = form.Y.value;
+	let R = form.R.value;
 
 	if (!(isPresented(X, "X") && validateParam(X, "X"))) {
 		return false;
@@ -35,8 +35,8 @@ function validateParam(param, paramName) {
 		showWarning(paramName + " должен быть числом");
 		return false;
 	}
-	var bottomBorder = borders[paramName][0];
-	var topBorder = borders[paramName][1];
+	let bottomBorder = borders[paramName][0];
+	let topBorder = borders[paramName][1];
 
 	if (!(parseInt(param, 10) > bottomBorder && parseInt(param, 10) < topBorder)) {
 		showWarning("Значение " + paramName + " не входит в необходимый диапазон (" + bottomBorder + " ... " + topBorder +")");
@@ -48,7 +48,7 @@ function validateParam(param, paramName) {
 
 function showWarning(warningMessage) {
 	
-	var warningContainer = document.getElementById("warning-container");
+	let warningContainer = document.getElementById("warning-container");
 	
 	if (warningContainer != null) {
 		warningContainer.textContent = warningMessage;

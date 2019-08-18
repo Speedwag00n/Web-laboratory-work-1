@@ -3,7 +3,7 @@
 <head>
 	<meta charset='utf-8'/>
 	<style>		
-		.result-table{
+		.table{
 			display: table;
 			border-collapse: collapse;
 			font-family: monospace;
@@ -15,11 +15,11 @@
 			margin-bottom: 20px;
 		}
 		
-		.result-tr{
+		.table-tr{
 			display: table-row;
 		}
 		
-		.result-td{
+		.table-td{
 			display: table-cell;
 			text-align: left;
 			border: none;
@@ -30,30 +30,30 @@
 	</style>
 </head>
 <body>
-	<div class="result-table">
-		<div class="result-tr">
-			<div class="result-td">X: </div>
-			<div class="result-td"><?=$X?></div>
+	<div id="result-table" class="table">
+		<div class="table-tr">
+			<div class="table-td">X: </div>
+			<div id="result-x" class="table-td"><?=$X?></div>
 		</div>
-		<div class="result-tr">
-			<div class="result-td">Y: </div>
-			<div class="result-td"><?=$Y?></div>
+		<div class="table-tr">
+			<div class="table-td">Y: </div>
+			<div id="result-y" class="table-td"><?=$Y?></div>
 		</div>
-		<div class="result-tr">
-			<div class="result-td">R: </div>
-			<div class="result-td"><?=$R?></div>
+		<div class="table-tr">
+			<div class="table-td">R: </div>
+			<div id="result-r" class="table-td"><?=$R?></div>
 		</div>
-		<div class="result-tr">
-			<div class="result-td">Попадание: </div>
-			<div class="result-td"><?=$hit?></div>
+		<div class="table-tr">
+			<div class="table-td">Попадание: </div>
+			<div id="result-hit" class="table-td"><?=$hit?></div>
 		</div>
-		<div class="result-tr">
-			<div class="result-td">Дата и время получения запроса: </div>
-			<div class="result-td"><?=$currentTime?></div>
+		<div class="table-tr">
+			<div class="table-td">Дата и время получения запроса: </div>
+			<div id="result-receive-time" class="table-td"><?=$currentTime?></div>
 		</div>
-		<div class="result-tr">
-			<div class="result-td">Время работы скрипта: </div>
-			<div class="result-td"><?=$workTime?></div>
+		<div class="table-tr">
+			<div class="table-td">Время работы скрипта: </div>
+			<div id="result-work-time" class="table-td"><?=$workTime?></div>
 		</div>
 	</div>
 </body>
