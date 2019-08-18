@@ -1,7 +1,6 @@
 let borders = [];
 borders["X"] = ["-3", "5"];
 borders["Y"] = ["-5", "3"];
-borders["R"] = ["1", "5"]; 
 
 function validate(form) {
 	
@@ -9,26 +8,29 @@ function validate(form) {
 	var Y = form.Y.value;
 	var R = form.R.value;
 
-	if (!validateParam(X, "X")) {
+	if (!(isPresented(X, "X") && validateParam(X, "X"))) {
 		return false;
 	}
-	if (!validateParam(Y, "Y")) {
+	if (!(isPresented(Y, "Y") && validateParam(Y, "Y"))) {
 		return false;
 	}
-	if (!validateParam(R, "R")) {
+	if (!isPresented(R, "R")) {
 		return false;
 	}
 	return true;
 	
 }
 
-function validateParam(param, paramName) {
-
+function isPresented(param, paramName) {
 	if (param == "") {
 		showWarning("Параметр " + paramName + " должен быть указан");
 		return false;
 	}
-		console.log();
+
+	return true;
+}
+
+function validateParam(param, paramName) {
 	if (!(!isNaN(Number(param)) && Number.isInteger( parseInt(param, 10) ))) {
 		showWarning(paramName + " должен быть числом");
 		return false;
