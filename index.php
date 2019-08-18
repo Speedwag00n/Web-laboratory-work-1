@@ -150,6 +150,31 @@
 			transition: 0.5s linear;
 			color: #CE0812;
 		}
+		
+		#indicator-container {
+			height: 200px;
+		}
+		
+		.indicator-image{
+			background-size: 100% 100%;
+			width: 90px;
+			height: 180px;
+			
+			margin: 10px 10px 10px 10px;
+			vertical-align: bottom;
+			
+			-moz-border-radius: 15px;
+			-webkit-border-radius: 15px;
+			-khtml-border-radius: 15px;
+		}
+		
+		.blured{
+			-webkit-filter: blur(3px);
+			-moz-filter: blur(3px);
+			-ms-filter: blur(3px);
+			-o-filter: blur(3px);
+			filter: blur(3px);
+		}
 	</style>
 </head>
 
@@ -223,9 +248,20 @@
 			include 'check.php';
 		?>
 	</div>
+	<div id="indicator-container" class="horisontal-centering-container">
+		<img class="indicator-image" src="img/indicator/0.jpg"/>
+		<img class="indicator-image" src="img/indicator/point.jpg"/>
+		<img class="indicator-image" src="img/indicator/0.jpg"/>
+		<img class="indicator-image" src="img/indicator/0.jpg"/>
+		<img class="indicator-image" src="img/indicator/0.jpg"/>
+		<img class="indicator-image" src="img/indicator/0.jpg"/>
+		<img class="indicator-image" src="img/indicator/0.jpg"/>
+		<img class="indicator-image" src="img/indicator/0.jpg"/>
+	</div>
 	
 	<script src="js/validation.js"></script>
 	<script src="js/create-chart.js"></script>
+	<script src="js/indicator.js"></script>
 </body>
 
 </html>
