@@ -153,6 +153,7 @@
 		
 		#indicator-container {
 			height: 200px;
+			font-size: 0px;
 		}
 		
 		.indicator-image{
@@ -160,7 +161,7 @@
 			width: 90px;
 			height: 180px;
 			
-			margin: 10px 10px 10px 10px;
+			margin: 10px 5px 0px 5px;
 			vertical-align: bottom;
 			
 			-moz-border-radius: 15px;
