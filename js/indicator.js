@@ -1,4 +1,4 @@
-var maxOffset = 5;
+const maxOffset = 5;
 
 if (document.getElementById("result-table") != null) {
 	makeBlured();

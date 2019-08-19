@@ -3,33 +3,49 @@
 
 <head>
 	<meta charset="utf-8"/>
-	<title>Web-программирование, лабораторная #1</title>
+	<title>Web-программирование, лабораторная работа #1</title>
 	<link rel="shortcut icon" href="img/favicon.ico">
 	
 	<style>	
 		body{
-			background-image: url(img/background.jpg);
-			background-size: 100% 100%;
+			background: #242529;
+			background: -webkit-radial-gradient(top, #777E84, #242529);
+			background: -moz-radial-gradient(top, #777E84, #242529);
+			background: -ms-radial-gradient(top, #777E84, #242529);
+			background: -o-radial-gradient(top, #777E84, #242529);
+			background: radial-gradient(to bottom, #777E84, #242529);
 			margin: 0;
 			background-attachment: fixed;
 		}
 		
-		#header{			
-			min-height: 50px;
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
+		#header{
+			height: 50px;
 			font-family: monospace !important;
 			color: white !important;
 			font-size: 18px;
+			text-align: center;
 		}
 		
-		#workspace-container{			
-			display: grid;
-			grid-template-columns: 1fr 1fr;
+		.header-content-container {
+			display:  table-cell;
+			vertical-align:  middle;
+		}
+		
+		.header-content{
+			width: 250px;
+			line-height: 50px;
+		}
+		
+		#workspace-container{		
+			font-size: 0px;
+			vertical-align: top;
 		}
 		
 		.workspace-item-container{
+			display: inline-block;
+			width: calc(50% - 40px);
 			margin: 0px 20px 10px 20px;
+			vertical-align: top;
 		}
 		
 		body > div{
@@ -41,12 +57,20 @@
 			margin-right: auto;
 			margin-top: 20px;
 			
+			background: #777777;
+			background: -webkit-linear-gradient(45deg, #777777, #5B5B5B, #777777);
+			background: -moz-linear-gradient(45deg, #777777, #5B5B5B, #777777);
+			background: -ms-linear-gradient(45deg, #777777, #5B5B5B, #777777);
+			background: -o-linear-gradient(45deg, #777777, #5B5B5B, #777777);
 			background: linear-gradient(45deg, #777777, #5B5B5B, #777777);
+			
 			border: 2px solid black;
 		
-			-moz-border-radius: 10px;
 			-webkit-border-radius: 10px;
-			-khtml-border-radius: 10px;
+			-moz-border-radius: 10px;
+			-ms-border-radius: 10px;
+			-o-border-radius: 10px;
+			border-radius: 10px;
 		}
 		
 		.horisontal-centering-container{
@@ -66,9 +90,11 @@
 			margin-bottom: 20px;
 			padding: 8px;
 			
-			-moz-border-radius: 5px;
 			-webkit-border-radius: 5px;
-			-khtml-border-radius: 5px;
+			-moz-border-radius: 5px;
+			-ms-border-radius: 5px;
+			-o-border-radius: 5px;
+			border-radius: 5px;
 		}
 		
 		.parameter-container{
@@ -100,6 +126,7 @@
 		.left-element{
 			padding-left: 20px;
 			text-align: left;
+			float: left;
 		}
 		
 		.center-element{
@@ -109,12 +136,17 @@
 		.rigth-element{
 			padding-right: 20px;
 			text-align: right;
+			float: right;
 		}
 	
 		div h1{
 			text-align: center;
 			margin: 10px 0px 10px 0px;
 			font-size: 30px;
+		}
+		
+		input {
+			margin: 0px 3% 0px 1%;
 		}
 		
 		.parameter-label{
@@ -164,9 +196,11 @@
 			margin: 10px 5px 0px 5px;
 			vertical-align: bottom;
 			
-			-moz-border-radius: 15px;
 			-webkit-border-radius: 15px;
-			-khtml-border-radius: 15px;
+			-moz-border-radius: 15px;
+			-ms-border-radius: 15px;
+			-o-border-radius: 15px;
+			border-radius: 15px;
 		}
 		
 		.blured{
@@ -181,9 +215,9 @@
 
 <body>
 	<div id="header">
-		<span id="author-name" class="left-element">Неманков Илья Олегович</span>
-		<span id="author-group" class="center-element">P3211</span>
-		<span id="lab-variant" class="rigth-element">Вариант 211015</span>
+		<span id="author-name" class="left-element header-content">Неманков Илья Олегович</span>
+		<span id="author-group" class="center-element header-content">P3211</span>
+		<span id="lab-variant" class="rigth-element header-content">Вариант 211015</span>
 	</div>
 	<div id="workspace-container">
 		<div class="workspace-item-container">
@@ -197,40 +231,31 @@
 			<form id="computation-form" onsubmit="return validate(this);">
 				<div>
 					<div class="horisontal-centering-container parameter-container">
-						<div class="row-conteiner">
-							<label class="parameter-label">X: </label>
-							<input type="text" name="X" placeholder="(-3 ... 5)"/>
-						</div>
-						<div class="row-conteiner">
-							<label class="parameter-label">Y: </label>
-							<input type="text" name="Y" placeholder="(-5 ... 3)"/>
-						</div>
+						<label class="parameter-label">X:</label>
+						<input type="text" name="X" placeholder="(-3 ... 5)"/>
+
+						<label class="parameter-label">Y:</label>
+						<input type="text" name="Y" placeholder="(-5 ... 3)"/>
 					</div>
 					<div class="horisontal-centering-container parameter-container">
 						<div class="parameter-header">
 							<label class="parameter-label">Значения R</label>
 						</div>
 						<div>
-							<div class="row-conteiner">
-								<label class="radio-button-label">1</label>
-								<input type="radio" name="R" value="1"/>
-							</div>
-							<div class="row-conteiner">
-								<label class="radio-button-label">2</label>
-								<input type="radio" name="R" value="2"/>
-							</div>
-							<div class="row-conteiner">
-								<label class="radio-button-label">3</label>
-								<input type="radio" name="R" value="3"/>
-							</div>
-							<div class="row-conteiner">
-								<label class="radio-button-label">4</label>
-								<input type="radio" name="R" value="4"/>
-							</div>
-							<div class="row-conteiner">
-								<label class="radio-button-label">5</label>
-								<input type="radio" name="R" value="5"/>
-							</div>
+							<label class="radio-button-label">1</label>
+							<input type="radio" name="R" value="1"/>
+							
+							<label class="radio-button-label">2</label>
+							<input type="radio" name="R" value="2"/>
+							
+							<label class="radio-button-label">3</label>
+							<input type="radio" name="R" value="3"/>
+							
+							<label class="radio-button-label">4</label>
+							<input type="radio" name="R" value="4"/>
+							
+							<label class="radio-button-label">5</label>
+							<input type="radio" name="R" value="5"/>
 						</div>
 					</div>
 					<div class="horisontal-centering-container button-container">
