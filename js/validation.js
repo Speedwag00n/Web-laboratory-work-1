@@ -6,7 +6,13 @@ function validate(form) {
 	
 	let X = form.X.value;
 	let Y = form.Y.value;
-	let R = form.R.value;
+	let R = null;
+	
+	for (var i = 0; i < form.R.length; i++) {
+		if (form.R[i].checked) {
+			R = form.R[i].value;
+		}
+	}
 
 	let valid = true;
 	
@@ -36,7 +42,7 @@ function isPresented(param, paramName) {
 }
 
 function validateParam(param, paramName) {
-	if (!(!isNaN(Number(param)) && Number.isInteger( parseInt(param, 10) ))) {
+	if (!(!isNaN( Number(param) ) && param.lastIndexOf('.') != (param.length - 1))) {
 		showWarning(paramName + " должен быть числом", paramName);
 		return false;
 	} else {
@@ -45,7 +51,7 @@ function validateParam(param, paramName) {
 	let bottomBorder = borders[paramName][0];
 	let topBorder = borders[paramName][1];
 
-	if (!(parseInt(param, 10) > bottomBorder && parseInt(param, 10) < topBorder)) {
+	if (!(Number(param) > bottomBorder && Number(param) < topBorder)) {
 		showWarning(paramName + " не входит в необходимый диапазон (" + bottomBorder + " ... " + topBorder +")", paramName);
 		return false;
 	} else {
