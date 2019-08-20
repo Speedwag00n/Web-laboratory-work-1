@@ -36,9 +36,9 @@
 	$resultTemplate = str_replace('<?=$hit?>', $hit, $resultTemplate);
 	$resultTemplate = str_replace('<?=$currentTime?>', $currentTime, $resultTemplate);
 		
-	$workTime = round(microtime(true) - $workTime, 8);
+	$workTime = round(microtime(true) - $workTime, 6);
 	
-	$resultTemplate = str_replace('<?=$workTime?>', $workTime, $resultTemplate);
+	$resultTemplate = str_replace('<?=$workTime?>', sprintf('%f', $workTime), $resultTemplate);
 	
 	echo $resultTemplate;
 	

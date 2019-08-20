@@ -8,23 +8,28 @@ function validate(form) {
 	let Y = form.Y.value;
 	let R = form.R.value;
 
+	let valid = true;
+	
 	if (!(isPresented(X, "X") && validateParam(X, "X"))) {
-		return false;
+		valid = false;
 	}
 	if (!(isPresented(Y, "Y") && validateParam(Y, "Y"))) {
-		return false;
+		valid = false;
 	}
 	if (!isPresented(R, "R")) {
-		return false;
+		valid = false;
 	}
-	return true;
+
+	return valid;
 	
 }
 
 function isPresented(param, paramName) {
-	if (param == "") {
-		showWarning("Параметр " + paramName + " должен быть указан");
+	if (param == "" || param == null) {
+		showWarning(paramName + " должен быть указан", paramName);
 		return false;
+	} else {
+		showWarning("", paramName);
 	}
 
 	return true;
@@ -32,23 +37,27 @@ function isPresented(param, paramName) {
 
 function validateParam(param, paramName) {
 	if (!(!isNaN(Number(param)) && Number.isInteger( parseInt(param, 10) ))) {
-		showWarning(paramName + " должен быть числом");
+		showWarning(paramName + " должен быть числом", paramName);
 		return false;
+	} else {
+		showWarning("", paramName);
 	}
 	let bottomBorder = borders[paramName][0];
 	let topBorder = borders[paramName][1];
 
 	if (!(parseInt(param, 10) > bottomBorder && parseInt(param, 10) < topBorder)) {
-		showWarning("Значение " + paramName + " не входит в необходимый диапазон (" + bottomBorder + " ... " + topBorder +")");
+		showWarning(paramName + " не входит в необходимый диапазон (" + bottomBorder + " ... " + topBorder +")", paramName);
 		return false;
+	} else {
+		showWarning("", paramName);
 	}
 	
 	return true;
 }
 
-function showWarning(warningMessage) {
+function showWarning(warningMessage, paramName) {
 	
-	let warningContainer = document.getElementById("warning-container");
+	let warningContainer = document.getElementById("warning-container-" + paramName);
 	
 	if (warningContainer != null) {
 		warningContainer.textContent = warningMessage;
