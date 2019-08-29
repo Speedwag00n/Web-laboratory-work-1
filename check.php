@@ -12,15 +12,13 @@
     $R = $_GET["R"];
 	
 	if (!(checkX($X) && checkY($Y) && checkR($R))) {
-		include 'templates/empty-result.html';
+		include_once 'templates/empty-result.html';
 		return;
 	}
 
 	$hit;
 	date_default_timezone_set("Europe/Moscow");
     $currentTime = date("d-m-Y H:i:s");
-	
-	$resultTemplate = file_get_contents("templates/result-table.html");
 	
 	if (( ($X <= 0) && ($Y >= 0) && (pow( $X, 2 ) + pow( $Y, 2 ) <= pow( 0.5*$R, 2  ) )) || 
 		( ($X <= 0) && ($Y <= 0) && (abs( $X ) <= 0.5*$R) && (abs( $Y ) <= $R) ) ||
@@ -29,19 +27,11 @@
 	} else {
 		$hit = "Нет";
 	}
-	
-	$resultTemplate = str_replace('<?=$X?>', $X, $resultTemplate);
-	$resultTemplate = str_replace('<?=$Y?>', $Y, $resultTemplate);
-	$resultTemplate = str_replace('<?=$R?>', $R, $resultTemplate);
-	$resultTemplate = str_replace('<?=$hit?>', $hit, $resultTemplate);
-	$resultTemplate = str_replace('<?=$currentTime?>', $currentTime, $resultTemplate);
 		
 	$workTime = round(microtime(true) - $workTime, 6);
+	$workTime = sprintf('%f', $workTime);
 	
-	$resultTemplate = str_replace('<?=$workTime?>', sprintf('%f', $workTime), $resultTemplate);
-	
-	echo $resultTemplate;
-	
+	include_once "templates/result-table.html";
 	
 	function valuesPresented() {
 		return (isset($_GET["X"]) && isset($_GET["Y"]) && isset($_GET["R"]));
