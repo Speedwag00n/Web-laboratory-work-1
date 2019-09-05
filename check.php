@@ -17,8 +17,6 @@
 	}
 
 	$hit;
-	date_default_timezone_set("Europe/Moscow");
-    $currentTime = date("d-m-Y H:i:s");
 	
 	if (( ($X <= 0) && ($Y >= 0) && (pow( $X, 2 ) + pow( $Y, 2 ) <= pow( 0.5*$R, 2  ) )) || 
 		( ($X <= 0) && ($Y <= 0) && (abs( $X ) <= 0.5*$R) && (abs( $Y ) <= $R) ) ||

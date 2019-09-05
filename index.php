@@ -284,6 +284,7 @@
 		<img class="indicator-image" src="img/indicator/0.jpg" alt="number">
 	</div>
 	
+	<script src="js/init.js"></script>
 	<script src="js/validation.js"></script>
 	<script src="js/create-chart.js"></script>
 	<script src="js/indicator.js"></script>
