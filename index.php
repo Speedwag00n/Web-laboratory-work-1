@@ -81,10 +81,6 @@
 			text-align: center;
 		}
 		
-		#parameter-container-R{
-			padding-left: 5%
-		}
-		
 		.parameter-form-container{
 			padding: 10px 10px 0px 10px;
 			border: 2px solid black;
@@ -147,8 +143,9 @@
 			margin: 0 auto 1% auto;
 		}
 		
-		.radio-button-label{
+		.R-param{
 			font-size: 18px;
+			width: 100px;
 		}
 		
 		h1, label{
@@ -242,20 +239,13 @@
 						<label class="parameter-label">R:</label>
 						
 						<div id="parameter-container-R">
-							<label for="R-param-1" class="radio-button-label">1</label>
-							<input id="R-param-1" type="radio" name="R" value="1"/>
-								
-							<label for="R-param-2" class="radio-button-label">2</label>
-							<input id="R-param-2" type="radio" name="R" value="2"/>
-								
-							<label for="R-param-3" class="radio-button-label">3</label>
-							<input id="R-param-3" type="radio" name="R" value="3"/>
-								
-							<label for="R-param-4" class="radio-button-label">4</label>
-							<input id="R-param-4" type="radio" name="R" value="4"/>
-								
-							<label for="R-param-5" class="radio-button-label">5</label>
-							<input id="R-param-5" type="radio" name="R" value="5"/>
+							<select class="R-param" name="R">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
 						</div>
 						
 						<span id="warning-container-R" class="warning-container"></span>

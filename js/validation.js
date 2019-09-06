@@ -6,13 +6,7 @@ function validate(form) {
 	
 	let X = form.X.value;
 	let Y = form.Y.value;
-	let R = null;
-	
-	for (var i = 0; i < form.R.length; i++) {
-		if (form.R[i].checked) {
-			R = form.R[i].value;
-		}
-	}
+	let R = form.R.value;
 
 	let valid = true;
 	
