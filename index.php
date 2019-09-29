@@ -227,12 +227,12 @@
 				<div class="parameter-form-container">
 					<div class="parameter-container">
 						<label for="X-param" class="parameter-label">X:</label>
-						<input id="X-param" type="text" name="X" placeholder="(-3 ... 5)"/>
+						<input id="X-param" type="text" name="X" placeholder="(-3 ... 5)" maxlength="10">
 						<span id="warning-container-X" class="warning-container"></span>
 					</div>
 					<div class="parameter-container">
 						<label for="Y-param" class="parameter-label">Y:</label>
-						<input id="Y-param" type="text" name="Y" placeholder="(-5 ... 3)"/>
+						<input id="Y-param" type="text" name="Y" placeholder="(-5 ... 3)" maxlength="10">
 						<span id="warning-container-Y" class="warning-container"></span>
 					</div>
 					<div class="parameter-container">

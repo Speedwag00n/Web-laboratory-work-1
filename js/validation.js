@@ -36,7 +36,7 @@ function isPresented(param, paramName) {
 }
 
 function validateParam(param, paramName) {
-	if (!(!isNaN( Number(param) ) && param.lastIndexOf('.') != (param.length - 1))) {
+	if (!(!isNaN( Number(param) ) && param.lastIndexOf('.') != (param.length - 1))) {я
 		showWarning(paramName + " должен быть числом", paramName);
 		return false;
 	} else {

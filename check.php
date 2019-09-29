@@ -36,15 +36,15 @@
 	}
 	
 	function checkX($X) {
-		return (is_numeric($X) && $X > -3 && $X < 5);
+		return (is_numeric($X) && strlen($X) <=10 && $X > -3 && $X < 5);
 	}
 	
 	function checkY($Y) {
-		return (is_numeric($Y) && $Y > -5 && $Y < 3);
+		return (is_numeric($Y) && strlen($Y) <=10 && $Y > -5 && $Y < 3);
 	}
 	
 	function checkR($R) {
-		return (($R == ((string)(int)$R)) && $R >= 1 && $R <= 5);
+		return (($R == ((string)(int)$R)) && strlen($R) <=10 && $R >= 1 && $R <= 5);
 	}
 
 ?>
